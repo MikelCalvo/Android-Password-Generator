@@ -107,23 +107,14 @@
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="@string/generate_password"
                     android:textColor="@color/colorSecondaryLight"
-                    app:layout_constraintEnd_toStartOf="@+id/actionsDivider"
-                    app:layout_constraintHorizontal_bias="0.75"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/actionsDivider"
-                    app:strokeColor="@color/colorSecondaryLight" />
-
-                <Space
-                    android:id="@+id/actionsDivider"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.75"
+                    app:layout_constraintHorizontal_bias="0.3"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/useSpecialCharsCheckBox" />
+                    app:layout_constraintTop_toBottomOf="@+id/useSpecialCharsCheckBox"
+                    app:strokeColor="@color/colorSecondaryLight" />
 
                 <ImageButton
                     android:id="@+id/copyButton"
@@ -132,13 +123,14 @@
                     android:layout_height="0dp"
                     android:adjustViewBounds="true"
                     android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginStart="16dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/ic_copy"
                     app:layout_constraintBottom_toBottomOf="@+id/generateButton"
                     app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.25"
-                    app:layout_constraintStart_toEndOf="@id/actionsDivider"
+                    app:layout_constraintStart_toEndOf="@+id/generateButton"
                     app:layout_constraintTop_toTopOf="@+id/generateButton"
                     app:tint="@color/colorSecondaryLight" />
 
@@ -156,7 +148,7 @@
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/generateButton" />
+                    app:layout_constraintTop_toBottomOf="@+id/generateButton"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
