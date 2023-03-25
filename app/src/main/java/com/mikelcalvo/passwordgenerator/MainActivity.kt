@@ -24,9 +24,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.viewModel = viewModel
         setUp()
+        generatePassword()
     }
 
-    fun setUp() {
+    private fun setUp() {
         val initialLength = binding.lengthSeekBar.progress
         binding.lengthLabelTextView.text = getString(R.string.length_label, initialLength)
 
@@ -51,13 +52,8 @@ class MainActivity : AppCompatActivity() {
             generatePassword()
         }
 
-        binding.useSpecialCharsCheckBox.setOnCheckedChangeListener { _, isChecked ->
-            val length = binding.lengthSeekBar.progress
-            val useUppercase = binding.useUppercaseCheckBox.isChecked
-            val useNumbers = binding.useNumbersCheckBox.isChecked
-
-            val password = viewModel.generatePassword(length, useUppercase, useNumbers, isChecked)
-            binding.passwordTextView.text = password
+        binding.useSpecialCharsCheckBox.setOnCheckedChangeListener { _, _ ->
+            generatePassword()
         }
 
         binding.generateButton.setOnClickListener {
@@ -74,8 +70,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, getString(R.string.password_copied), Toast.LENGTH_SHORT).show()
             }
         }
-
-        generatePassword()
     }
 
     fun generatePassword() {
